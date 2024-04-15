@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #ca540b;
+  --secondary: #e16517;
+  --padding: 15px;
+  --cinza: #405040;
+  --cinza-claro: #dedede;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  max-width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+html {
+  background: url('./assets/imagens/background-space.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  margin: auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+mat-dialog-container {
+  background: rgb(21, 21, 21) !important;
+  border: 3px solid var(--primary);
+  border-radius: 20px !important;
+}
+
+.cdk-overlay-pane{
+  width: unset !important;
+  height: unset !important;
+  max-width: 60% !important;
+}
+
+
+
+

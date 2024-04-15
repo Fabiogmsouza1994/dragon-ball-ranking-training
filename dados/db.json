@@ -1,0 +1,21 @@
+{
+  "lutadores": [
+    {
+      "id": "bfb2",
+      "rank": "F",
+      "imagem": "/assets/imagens/base_form.gif",
+      "valorPremio": 20,
+      "valorTreino": 100,
+      "data": "2024-04-14T19:31:42.913Z"
+    },
+    {
+      "id": "f03d",
+      "nome": "Fábio",
+      "rank": "S",
+      "imagem": "/assets/imagens/ssjblue.gif",
+      "valorPremio": 60940,
+      "valorTreino": 8050,
+      "data": "2024-04-14T23:36:28.336Z"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+.principal {
+  margin: 2% auto;
+  max-width: 75%;
+  max-height: 75%;
+  background-color: rgb(22, 21, 32);
+  opacity: 0.95;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.formulario {
+  opacity: 0.8;
+  display: flex;
+
+  &__titulo {
+    text-transform: capitalize;
+    color: var(--primary);
+  }
+}
+
+.form-field {
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--cinza-claro);
+
+  &__label {
+    color: var(--secondary);
+    margin-bottom: 2.5%;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  &__div {
+    color: inherit;
+    outline: none;
+    margin-bottom: 7%;
+
+  }
+
+  &__botao {
+    background-color: var(--primary);
+    color: white;
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 50%;
+    margin: auto;
+  }
+}
+
+.treino {
+  width: 50%;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.envio {
+  padding: 2.5%;
+  width: 50%;
+
+  &__botao {
+    background-color: var(--primary);
+    color: white;
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 50%;
+    margin: 2% auto;
+  }
+}

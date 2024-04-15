@@ -1,0 +1,14 @@
+<div class="confirm-container">
+<h2 class="confirmation-title">{{ data.title }}</h2>
+<mat-dialog-content class="confirmation-content">{{
+  data.content
+}}</mat-dialog-content>
+</div>
+<mat-dialog-actions class="confirmation-actions">
+  <button class="confirmation-button" mat-button mat-dialog-close>
+    Cancelar
+  </button>
+  <button class="confirmation-button" mat-button [mat-dialog-close]="true">
+    Remover
+  </button>
+</mat-dialog-actions>

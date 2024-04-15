@@ -1,0 +1,29 @@
+<div class="principal">
+    <form class="formulario" (ngSubmit)="treinar()">
+
+        <div class="treino">
+            <div class="form-field">
+                <img [src]="imagemTreino" width="100%">
+            </div>
+            <button (click)="aumentar()" class="envio__botao" type="button">Aumentar poder de luta</button>
+        </div>
+
+        <div class="envio">
+            <div class="form-field" *ngIf="valorTreino == 0 ? false : true">
+                <label class="form-field__label" for="pontuacao">Sua pontuação:</label>
+                <div class="form-field__div" id="valorTreino" [(innerText)]="valorTreino"></div>
+
+                <label class="form-field__label" for="pontuacao">Progresso Saiyajin:</label>
+                <div class="form-field__div" id="evolucao">{{ progresso }}</div>
+
+                <label class="form-field__label" for="destino">Recompensa do Mr. Satan:</label>
+                <div class="form-field__div" id="valorPremio" [(innerText)]="valorPremio"></div>
+
+                <label class="form-field__label" for="nome">Informe seu nome:</label>
+                <input class="form-field__div" id="nome" type="string" [(ngModel)]="nome" name="nome" />
+
+                <button class="form-field__botao" type="submit">Concluir treino</button>
+            </div>
+        </div>
+    </form>
+</div>

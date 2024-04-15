@@ -1,0 +1,38 @@
+.confirmation-title {
+    font-size: 24px;
+    color: orange;
+}
+
+.confirm-container {
+    width: auto;
+    text-wrap: wrap;
+    padding: 8px;
+}
+
+.confirmation-content {
+    font-size: 16px;
+    color: white;
+    height: auto;
+    width: 100%;
+}
+
+.confirmation-button {
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+}
+
+.confirmation-button:focus  {
+    outline: none;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+
