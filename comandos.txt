@@ -1,7 +1,0 @@
-cmd
-
-npm install -g json-server
-
-cd dados
-
-json-server --watch db.json

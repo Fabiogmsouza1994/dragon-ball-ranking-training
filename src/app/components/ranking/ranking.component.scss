@@ -1,13 +1,8 @@
-body {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 .titulo {
   text-align: center;
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 5%;
+  color: var(--tertiary);
 }
 
 .tabela {
@@ -50,8 +45,185 @@ body {
     color: orange;
     font-weight: bold;
     font-size: 30px;
+    cursor: pointer;
     &:hover {
       color: red;
+    }
+  }
+
+  &__remove_mobile {
+    color: orange;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 0 20px rgba(200, 237, 255, 0.842);
+  border-radius: 15px;
+  width: auto;
+  padding: 2% 3%;
+  background-color: black;
+  opacity: 0.9;
+
+  &_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 3% 0;
+    color: var(--primary);
+  }
+
+  &_body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: auto;
+    padding: 0 0 3%;
+
+    &_img {
+      width: 36%;
+      border-radius: 8px;
+    }
+
+    &_infos {
+      width: auto;
+      white-space: normal;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--primary);
+
+      &_data {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        line-height: 1.5rem;
+        font-size: 100%;
+        border-bottom: 1px solid var(--primary);
+
+        &_last-item {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          line-height: 1.5rem;
+          font-size: 100%;
+          border-bottom: 1px solid var(--primary);
+        }
+
+        &_title {
+          color: var(--primary);
+          font-weight: bold;
+          padding-right: 3%;
+        }
+
+        &_text {
+          color: rgb(239, 236, 236);
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+  .card {
+    &_body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &_infos {
+        border-top: 0px;
+
+        &_data {
+          &_last-item {
+            font-size: 120%;
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  .card {
+    padding: 2.5% 4.5%;
+
+    &_header {
+      font-size: 138%;
+      padding: 3% 0 5%;
+      font-weight: bold;
+      color: var(--tertiary);
+    }
+
+    &_body {
+      &_img {
+        width: 35%;
+      }
+
+      &_infos {
+        margin-left: 5%;
+        width: 61%;
+
+        &_data {
+          font-size: 115%;
+          line-height: 2rem;
+
+          &_last-item {
+            line-height: 2rem;
+            font-size: 120%;
+          }
+
+          &_title {
+            padding-right: 3%;
+          }
+
+          &_text {
+            font-size: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .card {
+    &_header {
+      font-size: 150%;
+      font-weight: bold;
+      color: var(--tertiary);
+    }
+
+    &_body {
+      display: flex;
+      justify-content: left;
+
+      &_img {
+        width: 25%;
+        border-radius: 8px;
+      }
+
+      &_infos {
+        display: flex;
+        align-items: center;
+        margin-left: 3%;
+        width: 100%;
+
+        &_data {
+          font-size: 125%;
+          line-height: 2rem;
+        }
+      }
     }
   }
 }

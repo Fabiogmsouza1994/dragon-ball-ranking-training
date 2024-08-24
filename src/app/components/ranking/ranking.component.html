@@ -1,29 +1,71 @@
 <section class="container">
-    <h2 class="titulo">Ranking</h2>
-    <table class="tabela">
-        <thead class="tabela__cabecalho">
-            <th class="tabela__cabecalho__conteudo">Data</th>
-            <th class="tabela__cabecalho__conteudo">Nome</th>
-            <th class="tabela__cabecalho__conteudo">Poder de Luta</th>
-            <th class="tabela__cabecalho__conteudo">Rank</th>
-            <th class="tabela__cabecalho__conteudo">Prêmio</th>
-            <th class="tabela__cabecalho__conteudo">Nível Saiyajin</th>
-            <th class="tabela__cabecalho__conteudo"></th>
+  <h2 class="titulo">Ranking</h2>
+  <table class="tabela" *ngIf="responsiveMatches; else fightersCards">
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo">Data</th>
+      <th class="tabela__cabecalho__conteudo">Nome</th>
+      <th class="tabela__cabecalho__conteudo">Poder de Luta</th>
+      <th class="tabela__cabecalho__conteudo">Rank</th>
+      <th class="tabela__cabecalho__conteudo">Prêmio</th>
+      <th class="tabela__cabecalho__conteudo">Nível Saiyajin</th>
+      <th class="tabela__cabecalho__conteudo"></th>
+    </thead>
+    <tbody *ngIf="lutadores?.length > 0; else listaVazia">
+      <tr class="tabela__linha" *ngFor="let lutador of lutadores">
+        <td class="tabela__conteudo">{{ lutador.data | date : "short" }}</td>
+        <td class="tabela__conteudo">{{ lutador.nome }}</td>
+        <td class="tabela__conteudo">{{ lutador.valorTreino }}</td>
+        <td class="tabela__conteudo">{{ lutador.rank }}</td>
+        <td class="tabela__conteudo">{{ lutador.valorPremio | currency }}</td>
+        <td class="tabela__conteudo">
+          <img [src]="lutador.imagem" height="128px" width="128px" />
+        </td>
+        <td class="tabela__remove" (click)="removeSaiyan(lutador)">X</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #listaVazia>
+    <p>Nenhuma operação cadastrada.</p>
+  </ng-template>
 
-        </thead>
-        <tbody *ngIf="lutadores?.length > 0; else listaVazia">
-            <tr class="tabela__linha" *ngFor="let lutador of lutadores">
-                <td class="tabela__conteudo">{{ lutador.data | date: "short" }}</td>
-                <td class="tabela__conteudo">{{ lutador.nome }}</td>
-                <td class="tabela__conteudo">{{ lutador.valorTreino }}</td>
-                <td class="tabela__conteudo">{{ lutador.rank }}</td>
-                <td class="tabela__conteudo">{{ lutador.valorPremio | currency }}</td>
-                <td class="tabela__conteudo"><img [src]="lutador.imagem" height=128px width=128px></td>
-                <td class="tabela__remove" (click)="removeSaiyan(lutador)" style="cursor:pointer">X</td>
-            </tr>
-        </tbody>
-    </table>
-    <ng-template #listaVazia>
-        <p>Nenhuma operação cadastrada.</p>
-    </ng-template>
+  <ng-template #fightersCards>
+    <div *ngIf="lutadores?.length > 0; else listaVazia" class="card">
+      <div *ngFor="let lutador of lutadores">
+        <div class="card_header">
+          <div>{{ lutador.nome }}</div>
+          <div>X</div>
+        </div>
+        <div class="card_body">
+          <img class="card_body_img" [src]="lutador.imagem" />
+          <div class="card_body_infos">
+            <div class="card_body_infos_data">
+                <div class="card_body_infos_data_title">Power:</div>
+                <div class="card_body_infos_data_text">
+                  {{ lutador.valorTreino }}
+                </div>
+            </div>
+
+            <div class="card_body_infos_data">
+              <div class="card_body_infos_data_title">Rank:</div>
+              <div class="card_body_infos_data_text">{{ lutador.rank }}</div>
+            </div>
+
+            <div class="card_body_infos_data">
+              <div class="card_body_infos_data_title">Award:</div>
+              <div class="card_body_infos_data_text">
+                {{ lutador.valorPremio }}
+              </div>
+            </div>
+
+            <div class="card_body_infos_data_last-item">
+              <div class="card_body_infos_data_title">Data:</div>
+              <div class="card_body_infos_data_text">
+                {{ lutador.data | date : "shortDate" }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </section>

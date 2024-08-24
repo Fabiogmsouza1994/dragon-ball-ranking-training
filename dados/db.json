@@ -16,6 +16,24 @@
       "valorPremio": 60940,
       "valorTreino": 8050,
       "data": "2024-04-14T23:36:28.336Z"
+    },
+    {
+      "id": "7bac",
+      "nome": "Breno",
+      "rank": "E",
+      "imagem": "/assets/imagens/ssj1.gif",
+      "valorPremio": 540,
+      "valorTreino": 450,
+      "data": "2024-08-20T21:02:59.324Z"
+    },
+    {
+      "id": "1eb4",
+      "nome": "Natalia",
+      "rank": "C",
+      "imagem": "/assets/imagens/ssj3.gif",
+      "valorPremio": 6440,
+      "valorTreino": 2100,
+      "data": "2024-08-24T07:43:24.442Z"
     }
   ]
 }
