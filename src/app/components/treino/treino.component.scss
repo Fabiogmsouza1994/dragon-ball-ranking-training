@@ -39,20 +39,6 @@
     margin-bottom: 7%;
 
   }
-
-  &__botao {
-    background-color: var(--primary);
-    color: white;
-    flex: 1;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 0.5em;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    width: 50%;
-    margin: auto;
-  }
 }
 
 .treino {

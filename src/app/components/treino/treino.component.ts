@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { DadosTreino } from "../../models/dadostreino.model";
 import { LutadoresService } from "../../services/lutadores-ranqueados.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     selector: 'app-treino',
@@ -9,7 +10,7 @@ import { LutadoresService } from "../../services/lutadores-ranqueados.service";
     styleUrls: ['./treino.component.scss']
 })
 
-export class TreinoComponent {
+export class TreinoComponent implements OnInit {
 
     nome!: string;
     rank!: string;
@@ -20,15 +21,22 @@ export class TreinoComponent {
     valorTreino: number = 0;
     progresso!: string;
 
-    constructor(private service: LutadoresService, private router: Router) {
+    form: FormGroup = this._fb.group({
+        fighterName: ['', Validators.required]
+    })
+
+    constructor(private service: LutadoresService, private router: Router, private _fb: FormBuilder) {
 
     }
 
-    treinar() {
+    ngOnInit() {
+        console.log(this.form.get('fighterName'));
+    }
 
-        console.log('Novo treino começou.');
+
+    treinar() {
         const dadosTreino: DadosTreino = {
-            nome: this.nome,
+            nome: this.form.get('fighterName')?.value,
             rank: this.rank,
             imagem: this.imagem,
             id: this.id,

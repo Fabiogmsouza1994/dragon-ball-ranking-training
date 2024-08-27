@@ -1,0 +1,24 @@
+.activated {
+    @extend .button-style;
+    background-color: var(--primary);
+    color: white;
+}
+
+.inactivated {
+    @extend .button-style;
+    background-color: gray;
+    color: black;
+    pointer-events: none;
+}
+
+.button-style {
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 50%;
+    margin: auto;
+}

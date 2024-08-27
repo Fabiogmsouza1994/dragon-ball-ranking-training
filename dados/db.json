@@ -1,14 +1,6 @@
 {
   "lutadores": [
     {
-      "id": "bfb2",
-      "rank": "F",
-      "imagem": "/assets/imagens/base_form.gif",
-      "valorPremio": 20,
-      "valorTreino": 100,
-      "data": "2024-04-14T19:31:42.913Z"
-    },
-    {
       "id": "f03d",
       "nome": "Fábio",
       "rank": "S",
@@ -34,6 +26,69 @@
       "valorPremio": 6440,
       "valorTreino": 2100,
       "data": "2024-08-24T07:43:24.442Z"
+    },
+    {
+      "id": "3433",
+      "nome": "nnbbnnbn",
+      "rank": "F",
+      "imagem": "/assets/imagens/base_form.gif",
+      "valorPremio": 10,
+      "valorTreino": 50,
+      "data": "2024-08-27T01:23:28.169Z"
+    },
+    {
+      "id": "eb0c",
+      "nome": "Diego",
+      "rank": "E",
+      "imagem": "/assets/imagens/ssj1.gif",
+      "valorPremio": 340,
+      "valorTreino": 350,
+      "data": "2024-08-27T01:45:30.136Z"
+    },
+    {
+      "id": "38f8",
+      "nome": "Amanda",
+      "rank": "B",
+      "imagem": "/assets/imagens/ssj4.gif",
+      "valorPremio": 12340,
+      "valorTreino": 3050,
+      "data": "2024-08-27T01:46:27.742Z"
+    },
+    {
+      "id": "6761",
+      "nome": "Daniel",
+      "rank": "E",
+      "imagem": "/assets/imagens/ssj1.gif",
+      "valorPremio": 1140,
+      "valorTreino": 750,
+      "data": "2024-08-27T01:47:08.842Z"
+    },
+    {
+      "id": "1094",
+      "nome": "Atauine",
+      "rank": "A",
+      "imagem": "/assets/imagens/ssjgod.gif",
+      "valorPremio": 24540,
+      "valorTreino": 4450,
+      "data": "2024-08-27T02:31:24.351Z"
+    },
+    {
+      "id": "8fb3",
+      "nome": "",
+      "rank": "F",
+      "imagem": "/assets/imagens/base_form.gif",
+      "valorPremio": 10,
+      "valorTreino": 50,
+      "data": "2024-08-27T02:34:12.324Z"
+    },
+    {
+      "id": "3d2d",
+      "nome": "vvvbvb",
+      "rank": "F",
+      "imagem": "/assets/imagens/base_form.gif",
+      "valorPremio": 10,
+      "valorTreino": 50,
+      "data": "2024-08-27T03:28:55.833Z"
     }
   ]
 }

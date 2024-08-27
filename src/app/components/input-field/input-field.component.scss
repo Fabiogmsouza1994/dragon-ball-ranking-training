@@ -1,0 +1,36 @@
+.required {
+    @extend .input-style;
+    border: 2px solid rgb(216, 11, 11);
+}
+
+.required:focus, .required:active {
+    @extend .input-style;
+    outline: none !important;
+    box-shadow: 0 0 10px #719ECE;
+    border: 2px solid rgb(198, 197, 197);
+}
+
+.default {
+    @extend .input-style;
+    border: 2px solid rgb(198, 197, 197);
+}
+
+
+.input-style {
+    border-radius: 4px;
+    background-color: rgb(108, 108, 108);
+    color: white;
+    padding: 2% 2%;
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
+}
+
+.required-msg {
+line-height: 1.5rem;
+color: red;
+font-weight: bold;
+font-size: 100%;
+}
