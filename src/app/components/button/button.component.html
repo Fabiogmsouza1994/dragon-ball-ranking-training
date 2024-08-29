@@ -1,1 +1,7 @@
-<button [ngClass]="disabled ? 'inactivated' : 'activated'" [type]="type">{{textButton}}</button>
+<button
+  [disabled]="disabled"
+  [ngClass]="disabled ? 'inactivated' : 'activated'"
+  [type]="type"
+>
+  {{ textButton }}
+</button>
