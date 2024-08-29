@@ -1,7 +1,8 @@
 <div class="input-container">
-  <label class="label">{{label}}</label>
+  <label class="label" [for]="id">{{label}}</label>
   <input
     [id]="id"
+    [name]="fieldName"
     [type]="type"
     [ngClass]="formControlProp.invalid ? 'required' : 'default'"
     [formControlName]="fieldName"

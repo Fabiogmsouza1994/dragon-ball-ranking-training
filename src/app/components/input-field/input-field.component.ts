@@ -1,10 +1,9 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   ControlContainer,
   FormControl,
   FormGroup,
   FormGroupDirective,
-  NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
 @Component({
@@ -34,7 +33,7 @@ export class InputFieldComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.type !== 'string' && this.type !== 'number') this.type = 'string';
-    if (this.id === undefined) this.id = null;
+    if (!this.id) this.id = this.fieldName;
 
     if (this.controlContainer && this.fieldName) {
       const formGroup: FormGroup = this.controlContainer.control as FormGroup;
@@ -57,7 +56,6 @@ export class InputFieldComponent implements OnInit {
 
   onFocus(): void {
     this.isFocused = true;
-    console.log(this.isFocused);
   }
 
   onBlur(): void {
