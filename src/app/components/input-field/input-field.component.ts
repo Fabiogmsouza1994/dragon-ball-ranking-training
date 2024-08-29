@@ -1,9 +1,7 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import {
   ControlContainer,
-  ControlValueAccessor,
   FormControl,
-  FormControlName,
   FormGroup,
   FormGroupDirective,
   NG_VALUE_ACCESSOR,
@@ -19,21 +17,18 @@ import {
       useExisting: FormGroupDirective,
     },
   ],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputFieldComponent),
-      multi: true,
-    },
-  ],
 })
-export class InputFieldComponent implements OnInit, ControlValueAccessor {
+export class InputFieldComponent implements OnInit {
   @Input() id!: number | string | null;
   @Input() type!: number | string;
   @Input() fieldName!: string;
+  @Input() label!: string;
+  @Input() maxLength!: string;
+
 
   formControlProp!: FormControl;
   isFocused!: boolean;
+  validationText!: string;
 
   constructor(private controlContainer: ControlContainer) {}
 
@@ -42,33 +37,30 @@ export class InputFieldComponent implements OnInit, ControlValueAccessor {
     if (this.id === undefined) this.id = null;
 
     if (this.controlContainer && this.fieldName) {
-      const formGroup = this.controlContainer.control as FormGroup;
+      const formGroup: FormGroup = this.controlContainer.control as FormGroup;
       this.formControlProp = formGroup.get(this.fieldName) as FormControl;
-      console.log(this.formControlProp);
-      console.log(this.fieldName);
     }
   }
 
-  writeValue(value: any): void {
-    if (value !== undefined) {
-      this.formControlProp.setValue(value);
+  defineValidationMsg(): boolean {
+    if (this.formControlProp.errors?.['required'] && !this.isFocused) {
+      this.validationText = 'Field is required.';
+      return true;
     }
-  }
+    else if (this.formControlProp?.hasError('minlength')) {
+      this.validationText = `Insert at least ${this.formControlProp.errors?.['minlength'].requiredLength} caracteres.`;
+      return true;
+    }
 
-  registerOnChange(fn: any): void {
-    this.formControlProp.valueChanges.subscribe(fn);
-  }
-
-  registerOnTouched(fn: any): void {
-    this.formControlProp.markAsTouched();
+    return false;
   }
 
   onFocus(): void {
     this.isFocused = true;
-    console.log(this.isFocused)
+    console.log(this.isFocused);
   }
 
-  onBlur():void {
-    this.isFocused = false; 
+  onBlur(): void {
+    this.isFocused = false;
   }
 }

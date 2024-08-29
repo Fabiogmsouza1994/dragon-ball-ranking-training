@@ -3,11 +3,9 @@
     border: 2px solid rgb(216, 11, 11);
 }
 
-.required:focus, .required:active {
+.required:focus {
     @extend .input-style;
-    outline: none !important;
-    box-shadow: 0 0 10px #719ECE;
-    border: 2px solid rgb(198, 197, 197);
+    @extend .input-style-focused;
 }
 
 .default {
@@ -15,6 +13,10 @@
     border: 2px solid rgb(198, 197, 197);
 }
 
+.default:focus {
+    @extend .input-style;
+    @extend .input-style-focused;
+}
 
 .input-style {
     border-radius: 4px;
@@ -23,10 +25,24 @@
     padding: 2% 2%;
 }
 
-.general {
+.input-style-focused {
+    outline: none !important;
+    box-shadow: 0 0 10px #719ECE;
+    border: 2px solid rgb(198, 197, 197);
+}
+
+.input-container {
     display: flex;
     flex-direction: column;
+    margin: 2% 0%;
 }
+
+.label {
+    color: var(--secondary);
+    margin-bottom: 2.5%;
+    font-size: 15px;
+    font-weight: bold;
+  }
 
 .required-msg {
 line-height: 1.5rem;

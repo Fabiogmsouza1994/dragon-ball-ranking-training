@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { DadosTreino } from "../../models/dadostreino.model";
 import { LutadoresService } from "../../services/lutadores-ranqueados.service";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormControlName, FormGroup, NgControl, Validators } from "@angular/forms";
 
 @Component({
     selector: 'app-treino',
@@ -22,8 +22,10 @@ export class TreinoComponent implements OnInit {
     progresso!: string;
 
     form: FormGroup = this._fb.group({
-        fighterName: ['', Validators.required]
+        fighterName: ['', [Validators.required, Validators.minLength(3)]]
     })
+
+    lala!: FormControlName;
 
     constructor(private service: LutadoresService, private router: Router, private _fb: FormBuilder) {
 

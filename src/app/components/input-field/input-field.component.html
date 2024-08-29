@@ -1,15 +1,16 @@
-<div class="general">
+<div class="input-container">
+  <label class="label">{{label}}</label>
   <input
     [id]="id"
     [type]="type"
     [ngClass]="formControlProp.invalid ? 'required' : 'default'"
     [formControlName]="fieldName"
-    name="fighterName"
+    [maxlength]="maxLength"
     (focus)="onFocus()"
     (blur)="onBlur()"
   />
   <small
     class="required-msg"
-    *ngIf="formControlProp.errors?.['required'] && !isFocused"
-    >Fighter name is required.</small>
+    *ngIf="defineValidationMsg()"
+    >{{validationText}}</small>
 </div>

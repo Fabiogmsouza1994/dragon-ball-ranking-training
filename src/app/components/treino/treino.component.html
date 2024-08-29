@@ -5,22 +5,21 @@
             <div class="form-field">
                 <img [src]="imagemTreino" width="100%">
             </div>
-            <button (click)="aumentar()" class="envio__botao" type="button">Aumentar poder de luta</button>
+            <button (click)="aumentar()" class="envio__botao" type="button">Increase your power</button>
         </div>
 
         <div class="envio">
             <div class="form-field" *ngIf="valorTreino == 0 ? false : true">
-                <label class="form-field__label" for="pontuacao">Sua pontuação:</label>
+                <label class="form-field__label" for="pontuacao">Points:</label>
                 <div class="form-field__div" id="valorTreino" [(innerText)]="valorTreino"></div>
 
-                <label class="form-field__label" for="pontuacao">Progresso Saiyajin:</label>
+                <label class="form-field__label" for="pontuacao">Saiyan progress:</label>
                 <div class="form-field__div" id="evolucao">{{ progresso }}</div>
 
-                <label class="form-field__label" for="destino">Recompensa do Mr. Satan:</label>
+                <label class="form-field__label" for="destino">Reward from Mr. Satan:</label>
                 <div class="form-field__div" id="valorPremio" [(innerText)]="valorPremio"></div>
 
-                <label class="form-field__label" for="nome">Informe seu nome:</label>
-                <app-input-field ngDefaultControl type="string" id="nameFighter" fieldName="fighterName"></app-input-field>
+                <app-input-field type="string" id="nameFighter" fieldName="fighterName" maxLength="25" label="Inform your name"></app-input-field>
                 <app-button [disabled]="!form.valid" textButton="Concluir Treino" type="submit"></app-button>
             </div>
         </div>
