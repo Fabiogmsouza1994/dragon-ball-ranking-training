@@ -25,14 +25,11 @@ export class TreinoComponent implements OnInit {
         fighterName: ['', [Validators.required, Validators.minLength(3)]]
     })
 
-    lala!: FormControlName;
-
     constructor(private service: LutadoresService, private router: Router, private _fb: FormBuilder) {
 
     }
 
-    ngOnInit() {
-        console.log(this.form.get('fighterName'));
+    ngOnInit(): void {
     }
 
 

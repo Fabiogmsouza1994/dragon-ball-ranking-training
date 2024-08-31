@@ -19,7 +19,7 @@
                 <label class="form-field__label" for="destino">Reward from Mr. Satan:</label>
                 <div class="form-field__div" id="valorPremio" [(innerText)]="valorPremio"></div>
 
-                <app-input-field type="string" id="nameFighter" fieldName="fighterName" maxLength="25" label="Inform your name"></app-input-field>
+                <app-input-field type="string" id="nameFighter" fieldName="fighterName" maxLength="25" label="Inform your name" lowerCase="true"></app-input-field>
                 <app-button [disabled]="!form.valid" textButton="Concluir Treino" type="submit"></app-button>
             </div>
         </div>

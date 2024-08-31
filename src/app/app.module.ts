@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { ButtonComponent } from './components/button/button.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 registerLocaleData(localePt, 'pt');
@@ -39,6 +40,7 @@ registerLocaleData(localePt, 'pt');
     MatDialogModule,
     ReactiveFormsModule,
     CommonModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
@@ -46,7 +48,7 @@ registerLocaleData(localePt, 'pt');
       provide: DEFAULT_CURRENCY_CODE,
       useValue: 'BRL'
     },
-    FormBuilder
+    FormBuilder,
   ],
   bootstrap: [AppComponent]
 })
